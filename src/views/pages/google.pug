@@ -1,0 +1,49 @@
+-
+   _MENU = [
+      { 'label':'Gmail', 'url':'/gmail' },
+      { 'label':'Images', 'url':'/Images'}
+   ]
+
+
+
+
+// HTML
+header
+
+    .menu-container
+        ul.menu
+            each item in _MENU
+                li
+                    a(href=item.url)= item.label
+
+section.page
+    img(margin="70%" height= "45%" width="75%" align="center"
+     src="https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg")
+
+section.searchbar
+    body
+      form(action='/add_google', method='POST' align="center" padding="-25%")
+        h2
+          input(type='text')
+
+section.container
+    button  Google Search
+    button I'm Feeling Lucky
+
+
+
+block footer
+  footer
+    ul
+      li
+        p India
+
+
+section.footer
+  footer
+    ul
+      li
+        a(href="/team") Advertising
+      li
+        a(href="/business") Business
+

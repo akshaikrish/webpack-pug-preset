@@ -1,0 +1,52 @@
+extends ../layouts/master.pug
+
+block title
+  title Google
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+
+block content
+
+  //- Header
+  div(class='menu') 
+    div.menu__link
+      a.menu__link--color(href='google.com') Gmail
+    div.menu__link
+      a.menu__link--color(href='google.com') Images
+
+    //-Sign in Button
+    div
+      button.menu__button-style Sign in
+
+  //-Google image
+  section.image
+    img.image__width(src="https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg")
+
+  //-search bar
+  section.form
+    form.form__align(action='/add_google', method='POST')
+        h2
+            input.form__align--style(type='text')
+
+    //-Search button
+    div.button
+        button.button__style Google Search
+        button I'm Feeling Lucky
+
+  
+
+  //-Footer
+  footer.footer
+    section
+      li India
+    section.footer__bottom
+      div
+        each val in ['Advertising', 'Business', 'About','How Search Works']
+            li.footer__bottom--display=val
+
+      div.footer__bottom--right
+        each val in ['Privacy', 'Terms', 'Settings']
+            li.footer__bottom--display=val
